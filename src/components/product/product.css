@@ -3,23 +3,26 @@
  flex-direction: column;
  background-color: white;
     z-index: 1;
-  /*   align-items:center;
+    align-items:center;
     justify-content: flex-end;
     width: 100%;
     padding: 20px;
     margin: 10px;
     max-height: 400px;
-    max-width: 100px; */
+    min-width: 100px;
 
 }
- .product>img{
+.product>img{
     max-height: 200px;
     width: 100%;
     object-fit: contain;
-    margin-bottom:15px;
+    margin-bottom:16px;
     
 }
-
+.product_rating{
+    display: flex;
+    
+}
 .product>button{
     background: #f0c14b;
     border: 1px solid;
@@ -35,4 +38,4 @@
 }
 .product_price{
     margin-top: 5px;
-} 
+}

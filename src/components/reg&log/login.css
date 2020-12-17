@@ -14,9 +14,7 @@ align-items: center;
 background-color: white;
 height: 100vh;
 }
-.login_signin{
 
-}
 .login_container{
 width: 300px;
 height:fit-content ;
@@ -26,7 +24,18 @@ padding: 20px;
 border-radius: 5px;
 border:1px solid lightgray
 }
+.login_reg{
 
-    .login_signup{
+    background: #f0c14b;
+    border: 1px solid;
+    margin-top:10px;
+    border-color:#a88734 #9c7e31 #846a29;
 
+}
+.login_log{
+
+    background: #f0c14b;
+    border: 1px solid;
+    margin-top:10px;
+    border-color:#a88734 #9c7e31 #846a29;
 }

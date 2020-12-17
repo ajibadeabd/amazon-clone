@@ -2,16 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import reducer,{initialState} from './components/store/reducer';
 import reportWebVitals from './reportWebVitals';
+import {StateProvider} from './components/store/stateProvider';
 import {BrowserRouter as Router,
-  Switch,
-  Route} from 'react-router-dom';
+  Switch} from 'react-router-dom';
   
 ReactDOM.render(
   <React.StrictMode>
     <Router>
     <Switch>
-    <App />
+    <StateProvider initialState={initialState}
+    reducer={reducer}
+    >
+<App />
+
+    </StateProvider>
+    
     </Switch>
     </Router>
 

@@ -4,10 +4,14 @@ import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasket from "@material-ui/icons/ShoppingBasket";
 import { useStateValue } from "../store/stateProvider";
+import { auth } from "../../firsbase";
 
 export default function Header() {
   const [state, dispatch] = useStateValue();
-
+const handleAuth  =()=>{
+    if(state.user)
+    auth.signOut()
+}
   return (
     <div className="header">
       <Link to="/">
@@ -23,17 +27,22 @@ export default function Header() {
         <SearchIcon className="header_searchIcon" />
       </div>
       <div className="header_nav">
-          <Link to="/login">
-          <div className="header_option">
-          <span class="header_optionLineOne">hello guest</span>
-          <span class="header_optionLineTwo">sign in </span>
+          <Link to={!state.user && "/login"}>
+          <div  onClick={handleAuth} className="header_option">
+          <span class="header_optionLineOne">hello {state.user?.email?state.user.email:'guest'}</span>
+          <span class="header_optionLineTwo">{state.user?"sign out" : "sign in"} </span>
         </div>
           </Link>
+
+          { state.user &&  
+          <Link to={state.user && "/order"}>
         
         <div className="header_option">
           <span class="header_optionLineOne">return </span>
           <span class="header_optionLineTwo">& orders </span>
         </div>
+        </Link>}
+
         <div className="header_option">
           <span class="header_optionLineOne">your</span>
           <span class="header_optionLineTwo"> prime </span>

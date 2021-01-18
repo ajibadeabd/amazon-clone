@@ -1,7 +1,7 @@
 import React from "react";
 import "./Basket.css";
 import { useStateValue } from "../store/stateProvider";
-export default function BasketItem({ title,qty, id, image, rating, price }) {
+export default function BasketItem({ hideButton,title,qty, id, image, rating, price }) {
  
     const [state, dispatch] = useStateValue();
 
@@ -21,19 +21,26 @@ export default function BasketItem({ title,qty, id, image, rating, price }) {
         <p className="checkoutProduct_price">
           <small>$</small>
           <strong>{price}</strong>
-        </p>qty:
-          <strong>{qty}</strong>
-        <p></p>
+        {/* </p>qty: */}
+          {/* <strong>{qty}</strong> */}
+        {/* <p> */}
+          
+        </p>
         <div className="checkoutProduct_rating">
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>x</p>
+              <p>🌟</p>
+
+// 
+
+
             ))}
         </div>
+        {hideButton?'':
       <button
       onClick={DELETE_FROM_BASKET}
-      >remove from basket</button>
+      >remove from basket</button>}
 
       </div>
     </div>

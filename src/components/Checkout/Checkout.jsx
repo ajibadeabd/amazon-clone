@@ -15,6 +15,7 @@ export default function Checkout() {
           alt=""
         />
         <div>
+          <h3>{state.user?.email}</h3>
           <h2 className="checkout_title">your shopping basket</h2>
           {state.basket.map((item) => (
             <BasketItem 

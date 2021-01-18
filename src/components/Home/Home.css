@@ -9,7 +9,7 @@ max-width:1500px
     width: 100%;
     z-index:-1;
     margin-bottom: -150px;
-    /* mask-image:linear-gradient(); */
+    mask-image:linear-gradient();
 }
 .home_row{
     display: flex;

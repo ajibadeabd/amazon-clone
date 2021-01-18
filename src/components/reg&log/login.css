@@ -26,16 +26,39 @@ border:1px solid lightgray
 }
 .login_reg{
 
-    background: #f0c14b;
+    /* background:darkgray; */
     border: 1px solid;
+    border-radius: 2px;
     margin-top:10px;
-    border-color:#a88734 #9c7e31 #846a29;
+    width: 100%;
+    height: 30px;
+    border-color:darkgray;
 
 }
-.login_log{
-
+.login_signin{
+    height: 30px;
+    border-radius: 2px;
     background: #f0c14b;
+    width: 100%;
     border: 1px solid;
     margin-top:10px;
     border-color:#a88734 #9c7e31 #846a29;
+}
+.login_container>form>input{
+    height: 30px;
+    margin-bottom:10px;
+    background-color: white;
+    width:98%
+
+}
+    .login_container>h1{
+font-weight: 500;
+margin-bottom: 20px;
+}
+.login_container>form>h5{
+    margin-bottom: 5px;
+}
+.login_container>p{
+    margin-top: 15px;
+    font-size:12px
 }

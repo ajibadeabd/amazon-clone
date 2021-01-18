@@ -1,17 +1,42 @@
 import React ,{useState}from "react";
-import { Link } from "react-router-dom";
+import {auth} from "../../firsbase";
+import { Link,useHistory } from "react-router-dom";
+// import { Link,useHistory } from "../store/stateProvider";
 import "./login.css";
 const Login = () => {
   const [pass,setPass]=useState('')
   const [email,setEmail]=useState('')
-  const login=()=>{
-    console.log('kj')
-    // e.preventDefaults()
-  }
-  onchange=(e)=>{
-    setEmail(e.target.value)
-    setPass(e.target.value)
+  const history = useHistory()
+  const login=(e)=>{
+    // console.log(pass,email)
+    e.preventDefault()
+    auth.signInWithEmailAndPassword(email,pass)
+    .then(aut=>{
+      history.push("/")
 
+    })
+    .catch(e=>{
+      alert(e.message)
+    })
+  }
+  const regiseter=(e)=>{
+    // console.log(pass,email)
+    e.preventDefault()
+    auth.createUserWithEmailAndPassword(email,pass)
+    .then(aut=>{
+      // history.push("/")
+      alert('account created pls login')
+
+    })
+    .catch(e=>{
+      alert(e.message)
+    })
+  }
+  const onchange1=(e)=>{
+    setEmail(e.target.value)
+  }
+  const  onchange2=(e)=>{
+    setPass(e.target.value)
   }
   return (
     <div className="login">
@@ -23,24 +48,24 @@ const Login = () => {
         />
       </Link>
       <div className="login_container">
-        <h1 className="login_signin">sign</h1>
+        <h1 className="">Sign-in</h1>
         <form action="">
-          <h5>email</h5>
+          <h5>E-mail</h5>
           <input type="text"
           value={email}
-          onChange={onchange}
+          onChange={onchange1}
           name="email"  />
           <h5>password</h5>
           <input type="password"
           value={pass}
-          onChange={onchange}
+          onChange={onchange2}
           name="password"  />
           <button 
-          className="login_log"
-          onClick={login}>send</button>
+          className="login_signin"
+          onClick={login}>Login</button>
         </form>
-        <p>by signing to our ...</p>
-        <button className="login_reg">create your amazon account</button>
+        <p>By signing to our ...</p>
+        <button onClick={regiseter} className="login_reg">create your amazon account</button>
       </div>
     </div>
   );

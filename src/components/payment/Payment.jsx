@@ -105,14 +105,21 @@ setClientSecret(response.data.clientSecret)}
             ))}
           </div>
         </div>
+        
+          
+          {
+                  getBasketTotal(state?.basket)==0?
+                  <h2 style={{textAlign:'center'}}>you have no item in your cart</h2>
+                  :
         <div className="payment_section">
-          <div className="payment_title">
-            <h3>Payment Method</h3>
-          </div>
+
+                  <div className="payment_title">
+                  <h3>Payment Method</h3>
+                </div>
           <div className="payment_details">
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
-
+            
               <div className="payment_pricecontainer">
                 <CurrencyFormat
                   renderText={(value) => (
@@ -131,14 +138,16 @@ setClientSecret(response.data.clientSecret)}
                   thousandSeparator={true}
                   prefix={"$"}
                 />
-                <button disabled={processing || disabled || succeeded}>
+               
+                
+                <button className='buy' disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>processing</p> : "BUY NOW"} </span>
                 </button>
               </div>
               {error && <div>{error}</div>}
             </form>
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   );

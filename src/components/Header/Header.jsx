@@ -14,13 +14,16 @@ const handleAuth  =()=>{
 }
   return (
     <div className="header">
-      <Link to="/">
+    <div className="header_logo"> 
+ <Link to="/">
         <img
           className="header_logo"
           src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
           alt=""
         />
       </Link>
+    </div>
+     
 
       <div className="header_search">
         <input type="text" className="header_searchInput" />
@@ -43,7 +46,7 @@ const handleAuth  =()=>{
         </div>
         </Link>}
 
-        <div className="header_option">
+        <div className=" prime header_option">
           <span class="header_optionLineOne">your</span>
           <span class="header_optionLineTwo"> prime </span>
         </div>

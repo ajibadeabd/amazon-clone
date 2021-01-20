@@ -1,5 +1,8 @@
 .payment{
     background-color: white;
+    /* margin-left: 10% ; */
+    /* width:110%; */
+
 
 }
 .payment_container>h1{
@@ -26,5 +29,32 @@ text-decoration: none;
     flex:0.2
 }
 .payment_pricecontainer{
+    
+}
+.buy{
+    background:#f0c14b ;
+    width:50%;
+    margin: auto;
+    height: 30px;
+    border:1px solid ;
+    font-weight: bolder;
+    margin-top:10px;
+    border-color:#f0c14b ;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+   
+.payment{
+    background-color: white;
+    /* margin-left: 10% ; */
+    width:110%;
+
+
+}
+
+
     
 }
